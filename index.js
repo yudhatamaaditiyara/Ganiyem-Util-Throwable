@@ -20,7 +20,7 @@
 class Throwable extends Error
 {
 	/**
-	 * @param {string?} message
+	 * @param {string|void} message
 	 */
 	constructor(message){
 		super(message);
@@ -29,21 +29,21 @@ class Throwable extends Error
 	}
 	
 	/**
-	 * @return {string}
+	 * @returns {string}
 	 */
 	getName(){
 		return this.name;
 	}
 
 	/**
-	 * @return {string}
+	 * @returns {string}
 	 */
 	getMessage(){
 		return this.message;
 	}
 
 	/**
-	 * @return {string}
+	 * @returns {string}
 	 */
 	getStack(){
 		return this.stack;
