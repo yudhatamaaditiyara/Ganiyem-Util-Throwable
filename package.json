@@ -1,6 +1,6 @@
 {
   "name": "ganiyem-util-throwable",
-  "description": "The Wayang Util Throwable",
+  "description": "The Ganiyem Util Throwable",
   "license": "Apache-2.0",
   "version": "1.0.0",
   "main": "index.js",
