@@ -24,29 +24,10 @@ class Throwable extends Error
 	 */
 	constructor(message){
 		super(message);
-		this.name = this.constructor.name;
+		Object.defineProperty(this, 'name', {
+			value: this.constructor.name, configurable: true, enumerable: false, writable: true
+		});
 		Error.captureStackTrace(this, this.constructor);
-	}
-	
-	/**
-	 * @returns {string}
-	 */
-	getName(){
-		return this.name;
-	}
-
-	/**
-	 * @returns {string}
-	 */
-	getMessage(){
-		return this.message;
-	}
-
-	/**
-	 * @returns {string}
-	 */
-	getStack(){
-		return this.stack;
 	}
 }
 
