@@ -47,7 +47,7 @@ describe("Throwable", () => {
 
 	/**
 	 */
-	it("default name is enumeable === false", () => {
+	it("default name is enumerable === false", () => {
 		let instance = new Throwable();
 		assert.ok(Object.getOwnPropertyDescriptor(instance, "name").enumerable === false);
 	});
@@ -76,7 +76,7 @@ describe("Throwable", () => {
 
 	/**
 	 */
-	it("param message undefined", () => {
+	it("param message undefined/void", () => {
 		let instance = new Throwable(void 0);
 		assert.ok(instance.message === "");
 		let instance2 = new Throwable();
