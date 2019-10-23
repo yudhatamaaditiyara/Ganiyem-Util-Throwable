@@ -7,4 +7,4 @@ npm i ganiyem-util-throwable
 ```
 
 ## License
-[Apache 2.0](https://github.com/yudhatamaaditiyara/Ganiyem-Util-Throwable/blob/master/LICENSE)
+[Apache-2.0](https://github.com/yudhatamaaditiyara/Ganiyem-Util-Throwable/blob/master/LICENSE)
