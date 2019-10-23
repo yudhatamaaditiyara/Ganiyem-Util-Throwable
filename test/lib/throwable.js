@@ -17,65 +17,48 @@ const assert = require("assert");
 const Throwable = require("../../");
 
 describe("Throwable", () => {
-	/**
-	 */
+
 	it("instanceof Error", () => {
 		let instance = new Throwable();
 		assert.ok(instance instanceof Error);
 	});
 
-	/**
-	 */
 	it("default name === 'Throwable'", () => {
 		let instance = new Throwable();
 		assert.ok(instance.name === "Throwable");
 	});
 
-	/**
-	 */
 	it("default message === ''", () => {
 		let instance = new Throwable();
 		assert.ok(instance.message === "");
 	});
 
-	/**
-	 */
 	it("default name is configurable === true", () => {
 		let instance = new Throwable();
 		assert.ok(Object.getOwnPropertyDescriptor(instance, "name").configurable === true);
 	});
 
-	/**
-	 */
 	it("default name is enumerable === false", () => {
 		let instance = new Throwable();
 		assert.ok(Object.getOwnPropertyDescriptor(instance, "name").enumerable === false);
 	});
 
-	/**
-	 */
 	it("default name is writable === true", () => {
 		let instance = new Throwable();
 		assert.ok(Object.getOwnPropertyDescriptor(instance, "name").writable === true);
 	});
 
-	/**
-	 */
 	it("param message string", () => {
 		let message = "Hello World";
 		let instance = new Throwable(message);
 		assert.ok(instance.message === message);
 	});
 
-	/**
-	 */
 	it("param message null", () => {
 		let instance = new Throwable(null);
 		assert.ok(instance.message === "null");
 	});
 
-	/**
-	 */
 	it("param message undefined/void", () => {
 		let instance = new Throwable(void 0);
 		assert.ok(instance.message === "");
