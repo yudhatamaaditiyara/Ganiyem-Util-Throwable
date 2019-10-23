@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 const assert = require("assert");
-const Throwable = require("../../../");
+const Throwable = require("../../");
 
 describe("Throwable", () => {
 	/**
