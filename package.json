@@ -14,7 +14,7 @@
 		"node": ">= 12.0.0"
 	},
 	"scripts": {
-		"test": "mocha --config test/config.json"
+		"test": "mocha --config test/bdd.json"
 	},
 	"files": [
 		"LICENSE",
