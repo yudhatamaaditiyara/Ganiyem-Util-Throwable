@@ -28,34 +28,77 @@ describe("throwable", () => {
 
 	/**
 	 */
-	it("#name", () => {
+	it("getOwnPropertyDescriptor(new Throwable(), 'name') != null", () => {
 		let throwable = new Throwable();
 		let descriptor = Object.getOwnPropertyDescriptor(throwable, "name");
 		assert.ok(!!descriptor);
+	});
+
+	/**
+	 */
+	it("getOwnPropertyDescriptor(new Throwable(), 'name').value === 'Throwable'", () => {
+		let throwable = new Throwable();
+		let descriptor = Object.getOwnPropertyDescriptor(throwable, "name");
 		assert.strictEqual(descriptor.value, "Throwable");
+	});
+
+	/**
+	 */
+	it("getOwnPropertyDescriptor(new Throwable(), 'name').configurable === true", () => {
+		let throwable = new Throwable();
+		let descriptor = Object.getOwnPropertyDescriptor(throwable, "name");
 		assert.strictEqual(descriptor.configurable, true);
+	});
+	
+	/**
+	 */
+	it("getOwnPropertyDescriptor(new Throwable(), 'name').enumerable === false", () => {
+		let throwable = new Throwable();
+		let descriptor = Object.getOwnPropertyDescriptor(throwable, "name");
 		assert.strictEqual(descriptor.enumerable, false);
+	});
+	
+	/**
+	 */
+	it("getOwnPropertyDescriptor(new Throwable(), 'name').writable === true", () => {
+		let throwable = new Throwable();
+		let descriptor = Object.getOwnPropertyDescriptor(throwable, "name");
 		assert.strictEqual(descriptor.writable, true);
 	});
 
 	/**
 	 */
-	it("#message", () => {
+	it("new Throwable().message === ''", () => {
 		let throwable = new Throwable();
 		assert.strictEqual(throwable.message, "");
 	});
 
 	/**
 	 */
-	it("new Throwable()", () => {
-		let throwableNull = new Throwable(null);
-		assert.strictEqual(throwableNull.message, "null");
+	it("new Throwable(null).message === 'null'", () => {
+		let throwable = new Throwable(null);
+		assert.strictEqual(throwable.message, "null");
+	});
 
-		let throwableUndefined = new Throwable(void 0);
-		assert.strictEqual(throwableUndefined.message, "");
+	/**
+	 */
+	it("new Throwable(void 0).message === ''", () => {
+		let throwable = new Throwable(void 0);
+		assert.strictEqual(throwable.message, "");
+	});
 
-		let throwableString = new Throwable("Foo");
-		assert.strictEqual(throwableString.message, "Foo");
+	/**
+	 */
+	it("new Throwable(123).message === '123'", () => {
+		let throwable = new Throwable(123);
+		assert.strictEqual(throwable.message, "123");
+	});
+
+	/**
+	 */
+	it("new Throwable('Foo').message === 'Foo'", () => {
+		let throwable = new Throwable("Foo");
+		assert.strictEqual(throwable.message, "Foo");
 	});
 
 	/**
@@ -65,7 +108,7 @@ describe("throwable", () => {
 		class TypeThrowableB extends Throwable{}
 
 		let typeThrowableA = new TypeThrowableA();
-		assert.strictEqual(typeThrowableA.name, TypeThrowableA.name);
+		assert.strictEqual(typeThrowableA.name, "TypeThrowableA");
 		assert.strictEqual(typeThrowableA.message, "");
 
 		let typeThrowableB = new TypeThrowableB("Foo");
