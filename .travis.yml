@@ -8,4 +8,4 @@ cache:
 script:
   - npm run test
 after_script:
-  - npm run coveralls
+  - npm run codecov
