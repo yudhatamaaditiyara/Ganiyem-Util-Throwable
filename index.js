@@ -18,4 +18,4 @@
 /**
  * @+
  */
-module.exports = require("./lib/throwable");
+module.exports = require('./lib/throwable');
