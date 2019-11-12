@@ -19,16 +19,16 @@
  */
 class Throwable extends Error
 {
-	/**
-	 * @param {string=} message
-	 */
-	constructor(message){
-		super(message);
-		Object.defineProperty(this, 'name', {
-			value: this.constructor.name, configurable: true, enumerable: false, writable: true
-		});
-		Error.captureStackTrace(this, this.constructor);
-	}
+  /**
+   * @param {string=} message
+   */
+  constructor(message){
+    super(message);
+    Object.defineProperty(this, 'name', {
+      value: this.constructor.name, configurable: true, enumerable: false, writable: true
+    });
+    Error.captureStackTrace(this, this.constructor);
+  }
 }
 
 /**
