@@ -44,13 +44,13 @@ describe('Throwable', () => {
 
   it('must be work inheritance class #name', () => {
     class TypeThrowable extends Throwable{}
-    let typeThrowableA = new TypeThrowable();
-    assert.strictEqual(typeThrowableA.name, 'TypeThrowable');
+    let typeThrowable = new TypeThrowable();
+    assert.strictEqual(typeThrowable.name, 'TypeThrowable');
   });
   
   it('must be work inheritance class #message', () => {
     class TypeThrowable extends Throwable{}
-    let typeThrowableA = new TypeThrowable();
-    assert.strictEqual(typeThrowableA.message, '');
+    let typeThrowable = new TypeThrowable();
+    assert.strictEqual(typeThrowable.message, '');
   });
 });
