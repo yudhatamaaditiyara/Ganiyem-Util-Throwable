@@ -16,103 +16,41 @@
 const assert = require('assert');
 const Throwable = require('../../');
 
-/**
- */
-describe('throwable', () => {
-	/**
-	 */
-	it('instance of Error', () => {
-		let throwable = new Throwable();
-		assert.ok(throwable instanceof Error);
-	});
+describe('Throwable', () => {
+  it('must be instanceof Error', () => {
+    let throwable = new Throwable();
+    assert.ok(throwable instanceof Error);
+  });
 
-	/**
-	 */
-	it('getOwnPropertyDescriptor(new Throwable(), "name") != null', () => {
-		let throwable = new Throwable();
-		let descriptor = Object.getOwnPropertyDescriptor(throwable, 'name');
-		assert.ok(!!descriptor);
-	});
+  it('must be new Throwable(null).message === "null"', () => {
+    let throwable = new Throwable(null);
+    assert.strictEqual(throwable.message, 'null');
+  });
+  
+  it('must be new Throwable(undefined).message === ""', () => {
+    let throwable = new Throwable(undefined);
+    assert.strictEqual(throwable.message, '');
+  });
 
-	/**
-	 */
-	it('getOwnPropertyDescriptor(new Throwable(), "name").value === "Throwable"', () => {
-		let throwable = new Throwable();
-		let descriptor = Object.getOwnPropertyDescriptor(throwable, 'name');
-		assert.strictEqual(descriptor.value, 'Throwable');
-	});
+  it('must be new Throwable(123).message === "123"', () => {
+    let throwable = new Throwable(123);
+    assert.strictEqual(throwable.message, '123');
+  });
 
-	/**
-	 */
-	it('getOwnPropertyDescriptor(new Throwable(), "name").configurable === true', () => {
-		let throwable = new Throwable();
-		let descriptor = Object.getOwnPropertyDescriptor(throwable, 'name');
-		assert.strictEqual(descriptor.configurable, true);
-	});
-	
-	/**
-	 */
-	it('getOwnPropertyDescriptor(new Throwable(), "name").enumerable === false', () => {
-		let throwable = new Throwable();
-		let descriptor = Object.getOwnPropertyDescriptor(throwable, 'name');
-		assert.strictEqual(descriptor.enumerable, false);
-	});
-	
-	/**
-	 */
-	it('getOwnPropertyDescriptor(new Throwable(), "name").writable === true', () => {
-		let throwable = new Throwable();
-		let descriptor = Object.getOwnPropertyDescriptor(throwable, 'name');
-		assert.strictEqual(descriptor.writable, true);
-	});
+  it('must be new Throwable("foo").message === "foo"', () => {
+    let throwable = new Throwable('foo');
+    assert.strictEqual(throwable.message, 'foo');
+  });
 
-	/**
-	 */
-	it('new Throwable().message === ""', () => {
-		let throwable = new Throwable();
-		assert.strictEqual(throwable.message, '');
-	});
-
-	/**
-	 */
-	it('new Throwable(null).message === "null"', () => {
-		let throwable = new Throwable(null);
-		assert.strictEqual(throwable.message, 'null');
-	});
-
-	/**
-	 */
-	it('new Throwable(void 0).message === ""', () => {
-		let throwable = new Throwable(void 0);
-		assert.strictEqual(throwable.message, '');
-	});
-
-	/**
-	 */
-	it('new Throwable(123).message === "123"', () => {
-		let throwable = new Throwable(123);
-		assert.strictEqual(throwable.message, '123');
-	});
-
-	/**
-	 */
-	it('new Throwable("Foo").message === "Foo"', () => {
-		let throwable = new Throwable('Foo');
-		assert.strictEqual(throwable.message, 'Foo');
-	});
-
-	/**
-	 */
-	it('class TypeThrowable extends Throwable{}', () => {
-		class TypeThrowableA extends Throwable{}
-		class TypeThrowableB extends Throwable{}
-
-		let typeThrowableA = new TypeThrowableA();
-		assert.strictEqual(typeThrowableA.name, 'TypeThrowableA');
-		assert.strictEqual(typeThrowableA.message, '');
-
-		let typeThrowableB = new TypeThrowableB('Foo');
-		assert.strictEqual(typeThrowableB.name, 'TypeThrowableB');
-		assert.strictEqual(typeThrowableB.message, 'Foo');
-	});
+  it('must be work inheritance class #name', () => {
+    class TypeThrowable extends Throwable{}
+    let typeThrowableA = new TypeThrowable();
+    assert.strictEqual(typeThrowableA.name, 'TypeThrowable');
+  });
+  
+  it('must be work inheritance class #message', () => {
+    class TypeThrowable extends Throwable{}
+    let typeThrowableA = new TypeThrowable();
+    assert.strictEqual(typeThrowableA.message, '');
+  });
 });
