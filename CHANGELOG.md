@@ -1,3 +1,8 @@
+# 1.1.6 - 2019-11-12
+
+**Removed**
+- Remove devDeps `mocha-lcov-reporter 1.3.0`
+
 # 1.1.5 - 2019-11-12
 
 **Changed**
