@@ -1,3 +1,8 @@
+# 1.1.7 - 2019-11-14
+
+**Changed**
+- Test refactoring
+
 # 1.1.6 - 2019-11-12
 
 **Removed**
