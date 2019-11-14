@@ -20,7 +20,7 @@
 class Throwable extends Error
 {
   /**
-   * @param {string=} message
+   * @param {string} [message]
    */
   constructor(message){
     super(message);
