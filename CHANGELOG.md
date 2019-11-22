@@ -1,3 +1,8 @@
+# 1.1.8 - 2019-11-22
+
+**Fixed**
+- Fix npm install deps version
+
 # 1.1.7 - 2019-11-14
 
 **Changed**
